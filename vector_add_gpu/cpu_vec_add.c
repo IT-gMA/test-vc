@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "../common/array.h"
+//#include "../common/array.h"
 
 
 #define MALLOC_CHECK_ERROR(X)({\
@@ -29,7 +29,7 @@ void vector_add(float *a, float *b, float *c, int n){
 
 
 int main(void){
-    int n = 100;
+    int n = 10000;
     float *A = (float*) malloc(n * sizeof(float));
     float *B = (float*) malloc(n * sizeof(float));
     float *C = (float*) malloc(n * sizeof(float));
