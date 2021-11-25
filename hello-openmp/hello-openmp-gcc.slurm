@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #SBATCH --job-name=hello-openmp
-#SBATCH --reservation=courseq
+#SBATCH --reservation=internsq
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
 #SBATCH --cpus-per-task=28
@@ -12,5 +12,9 @@ export OMP_NUM_THREADS=28
 export OMP_PLACES=cores
 export OMP_PROC_BIND=close
 
-# launch OpenMP program
+# Load modules, i.e RUNNING SOFTWARE
+module swap gcc/8.3.0
+
+
+# launch OpenMP program -n means run with 1 node and the "1" folllows it means run with 1 core
 srun --export=all -n 1 -c ${OMP_NUM_THREADS} ./hello-openmp-gcc

@@ -1,7 +1,7 @@
 #!/bin/bash -l
 #SBATCH --job-name=hello-mpi
-#SBATCH --reservation=courseq
-#SBATCH --nodes=1
+#SBATCH --reservation=internsq
+#SBATCH --nodes=5
 #SBATCH --tasks-per-node=28
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=4GB
@@ -12,4 +12,4 @@
 module load openmpi
 
 # launch MPI program
-srun --export=all -N 1 -n 28 ./hello-mpi
+srun --export=all ./hello-mpi

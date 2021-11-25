@@ -1,6 +1,6 @@
 #!/bin/bash -l
 #SBATCH --job-name=hostname
-#SBATCH --reservation=courseq
+#SBATCH --reservation=internsq
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
 #SBATCH --cpus-per-task=1
@@ -11,6 +11,8 @@
 for i in $(seq 1 20); do
    date
    echo "The hostname is:"
-   hostname
+   srun -N1 --tasks-per-node=1 hostname
+   srun -N1 --tasks-per-node=1 date
+  
    sleep 15s
 done
